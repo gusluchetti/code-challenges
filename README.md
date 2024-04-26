@@ -7,4 +7,8 @@ websites that offer coding problems. As of now, that includes:
 - Codeforces
 - Leetcode
 
-Wish me luck!
+### notes:
+i'm using (watch exec)[https://github.com/watchexec/watchexec] to compile and 
+run the binary instantly.
+
+`watchexec -e cpp -r "g++ main.cpp && ./a.out < input.txt"`
