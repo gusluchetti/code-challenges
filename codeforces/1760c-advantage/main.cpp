@@ -1,19 +1,33 @@
+#include <algorithm>
 #include <bits/stdc++.h>
+#include <functional>
+#include <vector>
 using namespace std;
 
-int solve() {
+void solve() {
   int n;
   cin >> n;
-  cout << n << "\n";
+  // cout << n << "\n";
+  vector<int> a(n);
 
-  for (int j = 1; j <= n; j++) {
-    int i;
-    cin >> i;
-    cout << i;
+  for (int j = 0; j < n; ++j) {
+    cin >> a[j];
+    // cout << a[j];
   }
+  // cout << "\n";
 
+  vector<int> b(a);
+  sort(b.begin(), b.end(), greater<int>());
+  // cout << b[0] << "\n";
+
+  for (int k = 0; k < n; ++k) {
+    if (a[k] - b[0] < 0) {
+      cout << a[k] - b[0] << " ";
+    } else {
+      cout << a[k] - b[1] << " ";
+    }
+  }
   cout << "\n";
-  return 0;
 }
 
 int main() {
