@@ -7,7 +7,8 @@ int main() {
 
   int weight;
   cin >> weight;
-  if (weight % 2 == 0 && weight > 2) {
+  int res = weight % 2;
+  if (res == 0 && weight > 2) {
     cout << "YES";
   } else {
     cout << "NO";
