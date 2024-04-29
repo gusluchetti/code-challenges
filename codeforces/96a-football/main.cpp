@@ -10,9 +10,9 @@ int main() {
 
   while (cin >> teams) {
     if (teams.size() >= 7) {
-      for (int i = 0; i < teams.size() - 7; i++) {
-        int same = 0;
-        for (int j = i; j < teams.size(); j++) {
+      for (int i = 0; i < teams.size() - 6; i++) {
+        int same = 1;
+        for (int j = i+1; j < teams.size(); j++) {
           if (teams[i] != teams[j]) {
             dangerous = false;
             break;
@@ -20,13 +20,13 @@ int main() {
             same++;
           }
 
-          if (same >= 7) {
+          if (same == 7) {
             dangerous = true;
             break;
           }
         }
 
-        if (same >= 7) { break; }
+        if (same == 7) { break; }
       }
     } else {
       dangerous = false;
