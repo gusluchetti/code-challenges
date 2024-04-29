@@ -9,7 +9,6 @@ int main() {
   int tt;
   cin >> tt;
   for(int i = 0; i < tt; i++) {
-    cout << "\n";
     string word;
     cin >> word;
     int size = word.size();
@@ -18,6 +17,7 @@ int main() {
     } else {
       cout << word;
     }
+    cout << "\n";
   }
 
   return 0;
