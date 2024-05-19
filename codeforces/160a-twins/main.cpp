@@ -1,28 +1,45 @@
+#include <algorithm>
 #include <bits/stdc++.h>
+#include <cstdint>
+#include <functional>
 using namespace std;
 
 int main() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 
-  int num_coins;
+  std::uint16_t num_coins;
   int coin_val;
-  vector<int> coin_values;
+  vector<std::uint16_t> coin_values;
 
   cin >> num_coins;
-  cout << num_coins << "\n";
 
   for (int i = 0; i < num_coins; i++) {
     cin >> coin_val;
     coin_values.push_back(coin_val);
   }
 
-  for (auto c : coin_values) {
-    cout << " " << c;
-  }
+  std::sort(coin_values.begin(), coin_values.end(), std::greater<>());
 
   int sum = std::reduce(coin_values.begin(), coin_values.end());
-  cout << "\n" << sum << "\n";
+  int mid = (sum / 2);
+
+  int found = false;
+  int selected = 1;
+  while (!found) {
+    int total = 0;
+    for (int i = 0; i < selected; i++) {
+      total += coin_values[i];
+    }
+    if (total > mid) {
+      found = true;
+      break;
+    } else {
+      selected++;
+    }
+  }
+
+  cout << selected;
 
   return 0;
 }
