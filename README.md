@@ -8,7 +8,7 @@ websites that offer coding problems. As of now, that includes:
 - Leetcode
 
 ### notes:
-i'm using (watch exec)[https://github.com/watchexec/watchexec] to compile and 
+i'm using [watchexec](https://github.com/watchexec/watchexec) to compile and 
 run the binary instantly.
 
 `watchexec -e cpp -r "g++ main.cpp && ./a.out < input.txt"`
